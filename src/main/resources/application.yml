@@ -1,0 +1,18 @@
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:9000
+          # by uri
+          jwk-set-uri: http://localhost:9000/.well-known/jwks.json
+          # or just by file
+          #public-key-location: classpath:my-key.pub
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driverClassName: org.h2.Driver
+    username: sa
+    password:
+  jpa.database-platform: org.hibernate.dialect.H2Dialect
+  h2:
+    console.enabled: true
